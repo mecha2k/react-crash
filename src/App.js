@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Header from "./components/header"
 import Footer from "./components/footer"
+import Home from "./views/home"
+import About from "./views/about"
+import Product from "./views/product"
 
 function App() {
   return (
@@ -15,12 +18,12 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            {/* <Route path="/about">
+            <Route path="/about">
               <About />
             </Route>
-            <Route path="/products/:id">
+            <Route>
               <Product />
-            </Route> */}
+            </Route>
           </Switch>
         </div>
 
