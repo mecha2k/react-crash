@@ -2,14 +2,12 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 function ProductCard(props) {
+  const imgUrl = props.product.images[0].imageUrl
+  const name = props.product.name
   return (
     <div className="border mb-4 rounded overflow-hidden">
       <Link to={`/products/${props.product.id}`}>
-        <div
-          style={{
-            backgroundImage: `url('${props.product.images[0].imageUrl}')`
-          }}
-          className="w-full h-64 bg-blue bg-cover"></div>
+        <img src={imgUrl} alt={name} className="w-full h-64 bg-blue bg-cover" />
       </Link>
       <div className="p-3">
         <h3 className="font-bold text-xl mb-3">

@@ -1,11 +1,25 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
-function Hello(props) {
+export function LifeCycle() {
+  const [number, setNumber] = useState(0)
+  useEffect(() => {
+    console.log("component did mount with useeffect")
+    return () => {
+      console.log("component will unmount with useeffect")
+    }
+  }, [number])
+
   return (
     <div>
-      <h1>Hello react...{props.name}</h1>
+      <h2>number is {number}</h2>
+      <button className="block" onClick={() => setNumber(number + 1)}>
+        Increment
+      </button>
+      <button className="block" onClick={() => setNumber(number - 1)}>
+        Decrement
+      </button>
     </div>
   )
 }
 
-export default Hello
+export default LifeCycle

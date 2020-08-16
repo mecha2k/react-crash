@@ -21,7 +21,7 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
-            <Route>
+            <Route path="/products/:id">
               <Product />
             </Route>
           </Switch>
